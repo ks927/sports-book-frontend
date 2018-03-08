@@ -20,23 +20,25 @@ import { REQUEST_USERS } from './constants';
 export class UserPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   componentDidMount() {
+    console.log('CDM', this.props);
     this.props.getUsers();
   }
 
-  userMap(users) {
-    console.log('usermap', users[0].name);
-    return users.map((user) => <li> {user.name} </li>);
-  }
+  // userMap(users) {
+  //   console.log('usermap', users[0].name);
+  //   return users.map((user) => <li key={user.id}> {user.name} </li>);
+  // }
 
   render() {
     const { users } = this.props.userpage;
-    console.log('-------', users);
+    console.log('-------', users, this.props);
 
     return (
       <div>
         <h1>All users</h1>
         <ul>
-          {this.userMap(users)}
+          {/* {this.userMap(users)} */}
+          {users.map((user) => <li key={user.id}> {user.name} </li>)}
         </ul>
       </div>
     );
