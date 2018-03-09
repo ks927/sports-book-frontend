@@ -10,24 +10,24 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-  requesting: false,
-  gotUsers: false,
-  users: [],
+  // requesting: false,
+  // gotUsers: false,
+  // users: [],
 });
 
 function userPageReducer(state = initialState, action) {
-  console.log('reducer', action);
+  // console.log('reducer', action);
   switch (action.type) {
     case DEFAULT_ACTION:
       return state;
-    case REQUEST_USERS:
-      return state
-        .set('requesting', true);
-    case GOT_USERS:
-      return state
-        .set('requesting', false)
-        .set('gotUsers', true)
-        .set('users', action.response.data);
+    // case REQUEST_USERS:
+    //   return state
+    //     .set('requesting', true);
+    // case GOT_USERS:
+    //   return state
+    //     .set('requesting', false)
+    //     .set('gotUsers', true)
+        // .set('users', action.response.data);
     default:
       return state;
   }

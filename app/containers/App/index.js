@@ -17,6 +17,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import UserPage from 'containers/UserPage/Loadable';
+import ProfilePage from 'containers/ProfilePage/Loadable';
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/users" component={UserPage} />
+        <Route exact path="/users/:id" component={ProfilePage} />
+
         <Route component={NotFoundPage} />
       </Switch>
     </div>

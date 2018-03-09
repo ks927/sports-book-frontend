@@ -10,3 +10,5 @@
  */
 
 export const DEFAULT_LOCALE = 'en';
+export const REQUEST_USERS = 'REQUEST_USERS';
+export const GOT_USERS = 'GOT_USERS';

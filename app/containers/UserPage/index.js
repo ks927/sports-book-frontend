@@ -9,13 +9,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { Link } from 'react-router-dom';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import makeSelectUserPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import { REQUEST_USERS } from './constants';
+import { REQUEST_USERS } from '../App/constants';
+import { makeSelectUsers } from '../App/selectors';
 
 export class UserPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -30,7 +32,7 @@ export class UserPage extends React.Component { // eslint-disable-line react/pre
   // }
 
   render() {
-    const { users } = this.props.userpage;
+    const { users } = this.props.users;
     console.log('-------', users, this.props);
 
     return (
@@ -38,7 +40,9 @@ export class UserPage extends React.Component { // eslint-disable-line react/pre
         <h1>All users</h1>
         <ul>
           {/* {this.userMap(users)} */}
-          {users.map((user) => <li key={user.id}> {user.name} </li>)}
+          {users.map((user) => (<li key={user.id}>
+            <Link to={`/users/${user.id}`}>{user.name}</Link>
+          </li>))}
         </ul>
       </div>
     );
@@ -54,6 +58,7 @@ UserPage.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
   userpage: makeSelectUserPage(),
+  users: makeSelectUsers(),
 });
 
 function mapDispatchToProps(dispatch) {
