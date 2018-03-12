@@ -18,6 +18,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import UserPage from 'containers/UserPage/Loadable';
 import ProfilePage from 'containers/ProfilePage/Loadable';
+import SignUpPage from '../SignUpPage/index';
 
 export default function App() {
   return (
@@ -26,7 +27,7 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/users" component={UserPage} />
         <Route exact path="/users/:id" component={ProfilePage} />
-
+        <Route exact path="/signup" component={SignUpPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

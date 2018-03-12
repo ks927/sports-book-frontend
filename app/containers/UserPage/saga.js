@@ -2,7 +2,7 @@ import { takeLatest, call, put, select } from 'redux-saga/effects';
 import request from 'utils/request';
 import { REQUEST_USERS, GOT_USERS } from '../App/constants';
 
-const API_URL = 'http://localhost:3001/api/v1/users';
+export const API_URL = 'http://localhost:3001/api/v1/users';
 
 export function* getUsers() {
   console.log('saga getusers');

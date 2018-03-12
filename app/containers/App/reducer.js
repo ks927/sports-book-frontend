@@ -16,7 +16,6 @@ const initialState = fromJS({
 });
 
 function globalReducer(state = initialState, action) {
-  console.log('reducer', action);
   switch (action.type) {
     case DEFAULT_ACTION:
       return state;

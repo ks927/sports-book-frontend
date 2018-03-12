@@ -12,7 +12,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
@@ -21,6 +20,8 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
         Welcome to Jerry&apos;s Sports Book App
       </h1>
         <Link to={'#'}>Login</Link>
+        <br />
+        <Link to={'/signup'}>Sign Up here</Link>
       </div>
     );
   }
